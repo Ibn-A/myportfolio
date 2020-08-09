@@ -1,5 +1,6 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
+import React, {useState} from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import MobilRightMenuSlider from "@material-ui/core/Drawer"
 import {
 AppBar,
 Toolbar,
@@ -15,6 +16,7 @@ Box
 } from '@material-ui/core'
 import {
 ArrowBack,
+Dehaze,
 AssignmentInd,
 Home,
 Apps,
@@ -26,8 +28,8 @@ ContactMail
 const useStyle = makeStyles(theme=>({
     menuSliderContainer: {
         width: 250,
-        background: "#511",
-        height: "30rem"
+        background: "#FFF",
+        height: "100%",
     },
     avatar: {
         display: "block",
@@ -60,33 +62,50 @@ const menuItems = [
 ]
 
 const Navbar = () => {
+    const [state, setState] = useState({
+        right: false
+    })
+
+    const toggleSlider = (slider, open) => () => {
+        setState({...state, [slider]: open})
+    }
+
     const classes = useStyle()
+
+    const sideList = slider => (
+        <Box className={classes.menuSliderContainer} component = "div" onClick={toggleSlider(slider, false)}>
+            <Avatar className={classes.avatar} src="" alt="Ibn Ali Mrehouri" />
+            <Divider />
+            <List>
+            {menuItems.map((listItem, key)=>(
+                <ListItem button key={key}>
+                    <ListItemIcon className={classes.listItem}>
+                        {listItem.listIcon}
+                    </ListItemIcon>
+                    <ListItemText primary={listItem.listText} />
+                </ListItem>
+                ))}
+            </List>
+        </Box>
+    )
     return (
         <>
-            <Box className={classes.menuSliderContainer} component = "nav">
-                <Avatar className={classes.avatar} src="" alt="Ibn Ali Mrehouri" />
-                <Divider />
-                <List>
-                    {menuItems.map((listItem, key)=>(
-                    <ListItem button key={key}>
-                        <ListItemIcon className={classes.listItem}>
-                            {listItem.listIcon}
-                        </ListItemIcon>
-                        <ListItemText primary={listItem.listText} />
-
-                    </ListItem>
-                    ))}
-                </List>
-            </Box>
             <Box component="nav">
                 <AppBar position="static" style={{background:"#FFF"}}>
                     <Toolbar>
-                        <IconButton>
-                            <ArrowBack style={{color:"tomato"}} />
+                        <IconButton onClick={toggleSlider("right", true)}>
+                            <Dehaze style={{color:"tomato"}} />
                         </IconButton>
                         <Typography variant="h5" style={{color:"tan"}}>
                             Portfolio
                         </Typography>
+                        <MobilRightMenuSlider 
+                        anchor="left" 
+                        open = {state.right}
+                        onClose={toggleSlider("right", false)}
+                        >
+                            {sideList("right")}
+                        </MobilRightMenuSlider>
                     </Toolbar>
                 </AppBar>
             </Box>
