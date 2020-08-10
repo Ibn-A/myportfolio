@@ -15,14 +15,13 @@ Typography,
 Box
 } from '@material-ui/core'
 import {
-ArrowBack,
 Dehaze,
 AssignmentInd,
 Home,
 Apps,
 ContactMail
 } from '@material-ui/icons'
-//import avatar from "../avatar.png"
+import avatar from "../images/avatar.png"
 
 // CSS STYLES
 const useStyle = makeStyles(theme=>({
@@ -33,9 +32,9 @@ const useStyle = makeStyles(theme=>({
     },
     avatar: {
         display: "block",
-        margin: "0.5rem auto",
+        margin: "1rem auto",
         width: theme.spacing(13),
-        height: theme.spacing(13)
+        height: theme.spacing(16),
     },
     listItem: {
         color:"tan"
@@ -64,18 +63,22 @@ const menuItems = [
 const Navbar = () => {
     const [state, setState] = useState({
         right: false
-    })
+    }) 
 
-    const toggleSlider = (slider, open) => () => {
-        setState({...state, [slider]: open})
-    }
+    const toggleSlider = ((slider, open) => () => {
+        setState({ ...state, [slider]: open});
+    });
 
     const classes = useStyle()
 
     const sideList = slider => (
-        <Box className={classes.menuSliderContainer} component = "div" onClick={toggleSlider(slider, false)}>
-            <Avatar className={classes.avatar} src="" alt="Ibn Ali Mrehouri" />
-            <Divider />
+        <Box 
+        className={classes.menuSliderContainer} 
+        component = "div"
+        onClick={toggleSlider(slider, false)}
+        >
+        <Avatar className={classes.avatar} src={avatar} alt="Ibn Ali Mrehouri" />
+        <Divider />
             <List>
             {menuItems.map((listItem, key)=>(
                 <ListItem button key={key}>
@@ -101,11 +104,12 @@ const Navbar = () => {
                         </Typography>
                         <MobilRightMenuSlider 
                         anchor="left" 
-                        open = {state.right}
-                        onClose={toggleSlider("right", false)}
+                        open={state.right}
+                        onClose={toggleSlider("right",false)}
                         >
                             {sideList("right")}
                         </MobilRightMenuSlider>
+                        
                     </Toolbar>
                 </AppBar>
             </Box>
