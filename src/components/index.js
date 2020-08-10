@@ -7,7 +7,8 @@ import { TextFormatOutlined } from '@material-ui/icons'
 
 const useStyles = makeStyles({
     particlesCanva: {
-        postion: "absolute"
+        postion: "absolute",
+        
     }
 })
 
@@ -42,7 +43,7 @@ const Home = () => {
                             random: true,
                             anim: {
                                 enable: true,
-                                speed: 10,
+                                speed: 6,
                                 size_min: 0.1,
                                 sync: true
                             }
