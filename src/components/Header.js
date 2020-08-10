@@ -25,8 +25,8 @@ const useStyles = makeStyles(theme=>({
         transform: "translate(-50%,-50%)",
         width: "100%",
         textAlign: "center",
-        zIndex: 1
-    }
+        zIndex: 1,
+    },
 
 }));
 
