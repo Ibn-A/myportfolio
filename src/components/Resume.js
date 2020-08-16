@@ -149,6 +149,40 @@ const Resume = () => {
                         Esse reprehenderit cupidatat et fugiat officia ex id. Veniam deserunt ullamco laborum adipisicing cillum reprehenderit. Sint et nostrud sunt cupidatat consectetur. Nisi qui commodo mollit ipsum in culpa veniam. Deserunt non exercitation fugiat Lorem reprehenderit ad nostrud magna esse id ea.
                         </Typography>
                     </Box>
+                    <Typography 
+                        variant="h2" 
+                        className={ `${classes.timeLineYear} ${classes.timeLineItem}`}
+                    >
+                        2018
+                    </Typography>
+                    <Box component="div" className={classes.timeLineItem}>
+                        <Typography variant="h5" align="center" className={classes.subHeading}>
+                            html&Css
+                        </Typography>
+                        <Typography variant="body1" align="center" style={{color: "tomato"}}>
+                            Philippe Frey Consulting
+                        </Typography>
+                        <Typography variant="subtitle2" align="center" style={{color: "black"}}>
+                        Esse reprehenderit cupidatat et fugiat officia ex id. Veniam deserunt ullamco laborum adipisicing cillum reprehenderit. Sint et nostrud sunt cupidatat consectetur. Nisi qui commodo mollit ipsum in culpa veniam. Deserunt non exercitation fugiat Lorem reprehenderit ad nostrud magna esse id ea.
+                        </Typography>
+                    </Box>
+                    <Typography 
+                        variant="h2" 
+                        className={ `${classes.timeLineYear} ${classes.timeLineItem}`}
+                    >
+                        2017
+                    </Typography>
+                    <Box component="div" className={classes.timeLineItem}>
+                        <Typography variant="h5" align="center" className={classes.subHeading}>
+                            ReactJs
+                        </Typography>
+                        <Typography variant="body1" align="center" style={{color: "tomato"}}>
+                            Philippe Frey Consulting
+                        </Typography>
+                        <Typography variant="subtitle2" align="center" style={{color: "black"}}>
+                        Esse reprehenderit cupidatat et fugiat officia ex id. Veniam deserunt ullamco laborum adipisicing cillum reprehenderit. Sint et nostrud sunt cupidatat consectetur. Nisi qui commodo mollit ipsum in culpa veniam. Deserunt non exercitation fugiat Lorem reprehenderit ad nostrud magna esse id ea.
+                        </Typography>
+                    </Box>
 
                 </Box>
             </Box>
