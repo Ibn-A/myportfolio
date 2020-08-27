@@ -100,7 +100,7 @@ const Navbar = () => {
     return (
         <>
             <Box component="nav">
-                <AppBar position="static" style={{background:"#FFF"}}>
+                <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
                     <Toolbar>
                         <IconButton onClick={toggleSlider("right", true)}>
                             <Dehaze style={{color:"tomato"}} />
