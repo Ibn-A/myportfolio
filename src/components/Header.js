@@ -33,27 +33,26 @@ const useStyles = makeStyles(theme=>({
 const Header = () => {
     const classes = useStyles();
     return (
-        <Box className={classes.typedContainer}>
-            <Grid container justify="center">
-                <Avatar className={classes.avatar} src={avatar} alt="Ali Mrehouri"/>
-            </Grid>
-            <Typography className={classes.title} variant ="h4">
-                <Typed 
-                    strings={["Ibn Ali Mrehouri"]} 
-                    typeSpeed={40}
-                />
-            </Typography>
-            <br/>
-            <Typography className={classes.subtitle} variant ="h5">
-                <Typed 
-                    strings={["Developpeur Web","PHP","Laravel 6","Symfony 4", "ReactJs"]} 
-                    typeSpeed={40}
-                    backSpeed={60}
-                    loop
-                />
-            </Typography>
-
-        </Box>
+        <>
+            <Box className={classes.typedContainer}>
+                
+                <Typography className={classes.title} variant ="h4">
+                    <Typed 
+                        strings={["Ibn Ali Mrehouri"]} 
+                        typeSpeed={40}
+                    />
+                </Typography>
+                <br/>
+                <Typography className={classes.subtitle} variant ="h5">
+                    <Typed 
+                        strings={["Developpeur Web","PHP","Laravel 6","Symfony 4", "ReactJs","MySQL"]} 
+                        typeSpeed={40}
+                        backSpeed={60}
+                        loop
+                    />
+                </Typography>
+            </Box>
+        </>
     )
 }
 
